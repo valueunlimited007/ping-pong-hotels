@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ping-pong-hotels.net/sitemap.xml
+Policies: public_data_discovery=allowed

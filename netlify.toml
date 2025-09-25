@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Link = "</sitemap.xml>; rel=\"sitemap\""
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "https://www.ping-pong-hotels.net/*"
+  to = "https://ping-pong-hotels.net/:splat"
+  status = 301
+  force = true

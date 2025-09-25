@@ -1,0 +1,1 @@
+export { generateBookingUrl } from './affiliates'
