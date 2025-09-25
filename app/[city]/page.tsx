@@ -4,6 +4,14 @@ import { getAllCities, getHotelsByCity } from '@/lib/data'
 
 interface Props { params: Promise<{ city: string }> }
 
+// DENNA FUNKTION BEHÖVS FÖR STATIC EXPORT!
+export async function generateStaticParams() {
+  const cities = await getAllCities()
+  return cities.map((city) => ({
+    city: city.slug,
+  }))
+}
+
 export default async function CityPage({ params }: Props) {
   const { city: citySlug } = await params
   const cities = await getAllCities()
@@ -50,4 +58,4 @@ export default async function CityPage({ params }: Props) {
       </div>
     </main>
   )
-}
+}// Force rebuild
